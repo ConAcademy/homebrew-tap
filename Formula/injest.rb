@@ -5,11 +5,11 @@
 class Injest < Formula
   desc "CLI Joke Wrapper"
   homepage "https://github.com/conacademy/injest"
-  version "0.0.2"
+  version "0.1.0"
 
   on_macos do
-    url "https://github.com/conacademy/injest/releases/download/v0.0.2/injest_0.0.2_darwin_all.tar.gz"
-    sha256 "2284445339a1a23db28c41348fab5718f92b38b8942aef753421af2c2b512863"
+    url "https://github.com/conacademy/injest/releases/download/v0.1.0/injest_0.1.0_darwin_all.tar.gz"
+    sha256 "73bf1849b42556a0a9caf014ea05fdd8e429c49b2e90efd78ae9c0fecf36dc72"
 
     def install
       bin.install "injest"
@@ -17,17 +17,17 @@ class Injest < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/conacademy/injest/releases/download/v0.0.2/injest_0.0.2_linux_amd64.tar.gz"
-      sha256 "428a8567ee2a1a0b301dccde9dfb109ec17e5f1de7875e635089cb4b09994c6e"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/conacademy/injest/releases/download/v0.1.0/injest_0.1.0_linux_arm64.tar.gz"
+      sha256 "9c6e5ed9ccd9857c31358437dfef553500c628ab27d52f58fc3bf2a664012ad0"
 
       def install
         bin.install "injest"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/conacademy/injest/releases/download/v0.0.2/injest_0.0.2_linux_arm64.tar.gz"
-      sha256 "c5ca045172443f3e51b11006e41dbe0b9993b4e71076973ee6ca5423e88c7ded"
+    if Hardware::CPU.intel?
+      url "https://github.com/conacademy/injest/releases/download/v0.1.0/injest_0.1.0_linux_amd64.tar.gz"
+      sha256 "f27f20358c2711f822d82c44f76ab817067126ac48fbe272bb12c0004bd6b0a9"
 
       def install
         bin.install "injest"
