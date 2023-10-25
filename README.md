@@ -4,9 +4,10 @@ ConAcademy is absolutely unaffiliated with a similar sounding educational organi
 
 
 ## Install
+
 ```
 brew tap conacademy/homebrew-tap
-brew install conacademy/homebrew-tap/tf
+brew install conacademy/tap/injest
 ```
 
 ----
